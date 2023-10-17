@@ -136,3 +136,67 @@ const decirHola = name => name ? `Hola ${name}` : "hola extraño"
 // condicional ternario
 
 console.log(decirHola("Jairo"))
+
+
+
+
+// Asincronia en JS
+
+let myStr = "hola";
+console.log(myStr);
+
+
+// JS es un lenguaje sincrono
+// JS tiene unas herramientas que nos permiten replicar procesos asincronos
+
+
+// setTimout => ejecutar JS despues de un tiempo determinado
+
+/*
+setTimeout( funcionAEjecutar, tiempoDeEspera ) // tiempo en milisegundos
+*/
+
+setTimeout( () => {
+  console.log("Despues de 2 segundos")
+}, 2000 )
+
+setTimeout( () => {
+  console.log("despues de 1 segundo")
+}, 1000 )
+
+
+setTimeout( () => {
+  console.log("despues de 0 segundo")
+}, 0 )
+
+console.log("Sincrono")
+
+// setInterval
+
+/* 
+setInterval( funcionAEjecutar, tiempoDeIntervalos ) // tiempo en milisegundos
+*/
+
+let id = setInterval(() => {
+
+  console.log("ejecutando")
+
+}, 1000)
+
+// clearInterval para detener intervalos
+
+setTimeout(() => {
+  // deten el intervalos
+  clearInterval( id )
+}, 5000)
+
+
+let counter = 0;
+
+let id2 = setInterval(() => {
+  counter++
+  console.log("timer", counter)
+  if (counter > 300) {
+    clearInterval(id2)
+  }
+}, 20)
