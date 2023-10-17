@@ -106,3 +106,36 @@ setTimeout(() => {
 setTimeout(() => {
   newNode.remove() // ref 1234
 }, 3000)
+
+
+
+// cambiar id y classes de los elementos de DOM
+
+let sectionNode = document.querySelector("#final-thoughts")
+
+console.log(sectionNode.id)
+
+sectionNode.id = "nuevo-id"
+
+console.log(sectionNode.className)
+
+// sectionNode.className = "clase-nueva"
+
+console.log(sectionNode.classList)
+
+// 4 metodos
+
+sectionNode.classList.add("clase-nueva")
+sectionNode.classList.remove("best-practice")
+
+sectionNode.classList.toggle("final-section") // si existe lo borras y si no existe lo agregas. Un interruptor.
+
+console.log( sectionNode.classList.contains("patata") ) // true o false
+
+
+setInterval(() => {
+  let finalH1Node = document.querySelector("#final-title")
+
+  finalH1Node.classList.toggle("title-blue")
+  finalH1Node.classList.toggle("title-red")
+}, 1000)
